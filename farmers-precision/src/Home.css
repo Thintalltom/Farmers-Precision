@@ -1,49 +1,98 @@
 @media only screen and (max-width: 800px) {
-    .header
-    {
-        display: flex;
-        flex-direction: row ;
-        background-color: rgba(151, 203, 233, 0.253);
-        padding: 10px;
-        justify-content: space-around;
-       
-    }
-    .home1 .home2
-    {
-        display: none;
-    }
-    .header2
-    {
-        background-color: rgba(151, 203, 233, 0.253);
-        height: 50vh;
-        display: flex ;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        gap:20px;
-        color: white;
-       
-    }
-    .header2 .wrapped{
-        gap: 20px;
-    }
-   
-    .header3
-    {
-        display: none;
-    }
-}
-.gridSys
-{
-    display: grid;
-    grid-template-columns: auto auto;
- 
+  .header {
+    display: flex;
+    flex-direction: row;
+    
+    padding: 10px;
+    justify-content: space-around;
+  }
+  .home1 .home2 {
+    display: none;
+  }
+  .header2 {
+    position: fixed;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
     justify-content: center;
-    gap: 30px;
-    margin-top: 20px;
-   
+    align-items: center;
+    gap: 20px;
+    color: white;
+    z-index: 2;
+    width: 320px;
+    margin-top: 10px;
+  }
+  .CTAB .CTA{
+    width: 300px !important;
+  }
+  .precision .precision2 {
+    color: black !important;
+    text-align: center;
+    font-size: smaller;
+  }
+  .precision .precision3 {
+    font-size: x-small;
+    width: 260px;
+  }
+  .features .features2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+  }
+  .header2 .wrapped {
+    gap: 20px;
+  }
+
+  .header3 {
+    display: none;
+  }
+  .gridSys {
+    display: flex;
+    flex-direction: column !important;
+  }
+  .flexBxx {
+    width: 300px !important;
+    justify-content: center;
+    align-items: center;
+  }
+  .holdFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .gridSys1 .gridText {
+    width: 300px;
+  }
+  .gridSys1 .holdT {
+    text-align: center;
+  }
+
+  .gridSys1 {
+    padding: 20px;
+    font-size: small;
+  }
+  .footS .TEXTh {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .footS {
+    height: 60vh;
+  }
 }
-.roundedFig
-{
-    clip-path: circle() !important;
+.gridSys {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
+.roundedFig {
+  clip-path: circle() !important;
+}
+html {
+    scroll-behavior: smooth;
 }

@@ -10,8 +10,12 @@ export const userContext = createContext();
 export const UserProvider = (props) => {
   const [user, setUser] = useState({});
   const [crop, setCrop] = useState("");
-  const [city, setCity] = useState("");
-  const [info, setInfo] = useState([]);
+  const [country, setCountry] = useState("");
+  const [waterlevel, setWaterlevel] = useState("");
+  const [humidity, setHumidity] = useState("");
+  const [temperature, setTemperature] = useState("");
+  const [ph, setPh] = useState("");
+  const [info, setInfo] = useState({});
   const [logpassword, setLogPassword] = useState("");
   const [logemail, setLogEmail] = useState("");
   const signUp = (email, password) => {
@@ -42,8 +46,7 @@ export const UserProvider = (props) => {
         login,
         crop,
         setCrop,
-        city,
-        setCity,
+        country, setCountry,waterlevel, setWaterlevel,humidity, setHumidity,temperature, setTemperature,ph, setPh,
         info,
         setInfo,
         signUp,

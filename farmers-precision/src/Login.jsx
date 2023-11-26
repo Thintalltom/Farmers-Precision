@@ -23,7 +23,7 @@ const Login = ({logpassword, setLogPassword, logemail, setLogEmail}) => {
   };
   return (
     <div>
-      <div className="w-[100vw] h-[100vh] flex-col flex  items-center justify-center  bg-slate-200">
+      <div className="w-[100vw] h-[100vh] flex-col flex  items-center justify-center  bg-white">
         <p className="text-4xl font-extrabold mb-4">Welcome User</p>
         <p className="text-slate-200 mb-4 font-bold">Login Account</p>
         <div className="text-slate-900 flex  items-center justify-center">

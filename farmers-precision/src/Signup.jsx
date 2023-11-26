@@ -20,7 +20,7 @@ const Signup = () => {
     }
   };
   return (
-    <div className="w-[100vw] h-[100vh] flex-col flex  items-center justify-center bg-slate-200">
+    <div className="w-[100vw] h-[100vh] flex-col flex  items-center justify-center bg-white">
       <p className="text-slate-900 mb-4 font-bold">Register Account</p>
       <div className="text-slate-900 flex  items-center justify-center">
         <form className="flex flex-col gap-9" onSubmit={handleSignup}>

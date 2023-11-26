@@ -44,7 +44,7 @@ const Home = () => {
     return User; ///this states that if the user.length is empty it is expected to return user again
   }
   return (
-    <div className="home1">
+    <div className="home1 ">
       <div className="bg-green-700 h-[70vh]">
         <div className="flex justify-around text-white p-4 home2 ">
           <p> Agrisage</p>
@@ -53,59 +53,72 @@ const Home = () => {
               Home
             </p>
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
+              <a href='#features'>
               Features
+              </a>
+             
             </p>
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
+            <a href='#works'>
               How it Works
+              </a>
+            </p>
+          
+            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
+            <a href='#about'>
+             About us
+              </a>
             </p>
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              Benefit
-            </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              About Us
-            </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
+            <a href='#contact'>
               Contact
+              </a>
             </p>
           </div>
         </div>
-        <div>
-          <div className="header text-white shadow-md lg:hidden">
+        <div className="bg-green-700 shadow-md">
+          <div className="header text-white  shadow-md lg:hidden">
             <p> Agrisage</p>
 
-            <div onClick={handleClick}>{open ? <p>close</p> : <p>open</p>}</div>
+            <div  onClick={handleClick}>{open ? <p>open</p> : <p>close</p>}</div>
           </div>
           <div
             className={
-              !open ? "header2 shadow-sm lg:hidden" : "header3 lg:hidden"
+              !open ? "header2 bg-green-700 shadow-sm lg:hidden" : "header3 lg:hidden"
             }
           >
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
               Home
             </p>
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
+            <a id='features'>
               Features
+              </a>
             </p>
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
+            <a id='works'>
               How it Works
+              </a>
+            </p>
+          
+            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
+            <a id='about'>
+             About us
+              </a>
             </p>
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              Benefit
-            </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              About Us
-            </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
+            <a id='contact'>
               Contact
+              </a>
             </p>
           </div>
         </div>
-        <div>
-          <div className="flex  flex-col h-[40vh]  justify-center items-center align-center">
-            <p className=" text-white text-4xl text-extrabold">
+        <div id='home'>
+          <div className="flex  precision flex-col h-[40vh]  justify-center items-center align-center">
+            <p className=" text-white precision2 sm:font-extrabold lg:text-5xl sm:text-sm sm:text-center text-extrabold">
               Welcome to Agrisage – Where Precision Meets Agriculture! 🌾
             </p>
-            <p className="text-center text-white text-extrathin mt-4 w-[700px]">
+            <p className="text-center precision3 text-white text-extrathin   mt-4 w-[700px]">
               At AgriSage, we're redefining agriculture through the power of
               precision AI. Step into a realm where technology and nature
               seamlessly converge to optimize your farm's potential.
@@ -113,19 +126,19 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="mt-[50px]">
-          <p className="text-center text-2xl  text-slate-200">Key Features</p>
-          <div className="flex justify-around mt-4">
+        <div className="mt-[50px] features " id='features'>
+          <p className="text-center font-extrabold text-2xl  text-slate-200">Key Features</p>
+          <div className="flex justify-around  mt-4 features2">
             <div className="bg-white p-4 w-[300px] text-center h-[200px] rounded-lg shadow-lg">
-              <p>Empowering Farmers</p>
+              <p className='font-extrabold'>Empowering Farmers</p>
               <p className="text-sm text-slate-600 mt-[25px]">
                 Join a community of forward-thinking farmers embracing the
                 future of agriculture. Access ongoing support, training, and
                 updates to stay at the forefront of ag-tech.
               </p>
             </div>
-            <div className="bg-white p-4 w-[300px] text-center h-[200px] rounded-lg shadow-lg">
-              <p>Smart Cropping</p>
+            <div className="bg-white p-4 w-[300px]  text-center h-[200px] rounded-lg shadow-lg">
+              <p className='font-extrabold'>Smart Cropping</p>
               <p className=" text-sm text-slate-600 mt-[25px]">
                 {" "}
                 Gain real-time insights into your crop health and growth.
@@ -134,7 +147,7 @@ const Home = () => {
               </p>
             </div>
             <div className="bg-white p-4 w-[300px] text-center h-[200px] rounded-lg shadow-lg">
-              <p>Data Driven Precision</p>
+              <p className='font-extrabold'>Data Driven Precision</p>
               <p className="text-sm text-slate-600 mt-[25px]">
                 Make informed decisions based on accurate and timely data.
                 Leverage advanced analytics to enhance crop planning and
@@ -144,80 +157,86 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="  mt-[30px]">
-          <p className="text-center mt-[20px] text-xl mt-[50px]">
+        <section className="  mt-[90px] " id='works'>
+          <p className="text-center font-extrabold mt-[20px] text-xl mt-[50px]">
             How it works
           </p>
 
-          <div className=" gridSys">
-            <div className="">
-              <p className="text-2xl ">
+          <div className=" gridSys ">
+            <div className="gridSys1 ">
+              <p className="lg:text-2xl sm:text-xl holdT ">
                 Sign Up for Exclusive Access to Precision Farming:
               </p>
               <p className="text-slate-500">🌱 Why Join AgriSage?</p>
-              <p className=" w-[400px] text-slate-500">
+              <p className=" lg:w-[400px] sm:w-[200px]  text-slate-500">
                 Unlock a world of possibilities Personalized Insights Community
                 Connection Exclusive Resources
               </p>
             </div>
-            <div className="bg-blue-500 w-[400px] rounded-[10px] flex justify-center">
-              <img src={signup} className="w-[250px]" />
+            <div className="holdFlex ">
+            <div className=" w-[400px] rounded-[10px] flexBxx flex justify-center">
+              <img src={signup} className="w-[250px] flexImg" />
+            </div>
             </div>
           </div>
 
-          <div className="gridSys">
-            <div className="bg-yellow-500 w-[400px] rounded-[10px] flex justify-center">
+          <div className="gridSys ">
+              <div className="holdFlex">
+              <div className=" flexBxx  w-[400px] rounded-[10px] flex justify-center">
               <img src={login} className="w-[250px]" />
             </div>
-            <div className="">
-              <p className="text-2xl ">
+              </div>
+            
+            <div className="gridSys1 ">
+              <p className="lg:text-2xl holdT sm:text-xl  ">
                 Welcome to the heart of AgriSage precision technology!
               </p>
-              <p className="text-slate-500  w-[600px]">
+              <p className="text-slate-500 gridText w-[600px]">
                 🌱 To unlock the full potential of our AI-driven solutions,
                 let's take you through a seamless journey.
               </p>
-              <p className=" w-[500px] text-slate-500">
+              <p className="sm:w-[150px] lg:w-[500px] text-slate-500">
                 Explore Features <br />
                 Access to advanced tools
               </p>
             </div>
           </div>
 
-          <div className="gridSys">
-            <div className="">
-              <p className="text-2xl ">See Our Precision AI in Action</p>
-              <p className="text-slate-500  w-[600px]">
+          <div className="gridSys " >
+            <div className="gridSys1 ">
+              <p className="lg:text-2xl sm:text-xl holdT ">See Our Precision AI in Action</p>
+              <p className="text-slate-500 gridText  w-[600px]">
                 🌱 To unlock the full potential of our AI-driven solutions,
                 let's take you through a seamless journey.
               </p>
-              <p className=" w-[500px] text-slate-500">
+              <p className=" sm:w-[150px] lg:w-[500px]  text-slate-500">
                 Real-time Monitoring <br />
                 Automation in Action <br />
                 Predictive Analysis
               </p>
             </div>
-
-            <div className=" bg-green-800 w-[400px] rounded-[10px] flex justify-center">
+            <div className="holdFlex">
+            <div className="flexBxx  w-[400px] rounded-[10px] flex justify-center">
               <img src={response} className="w-[250px] " />
             </div>
+            </div>
           </div>
-        </div>
+        </section>
 
-        <div className="flex justify-center p-4 items-center align-center">
-          <div className="CTA flex-col bg-slate-100 rounded-[30px] mt-[100px] h-[300px] w-[800px] flex justify-center align-center items-center ">
-            <p className="text-center text-2xl">
+        <div className="flex justify-center  p-4 items-center align-center CTAB">
+          <div className="CTA flex-col bg-slate-100  rounded-[30px] mt-[100px] h-[300px] lg:w-[800px] sm:w-[500px] flex justify-center align-center items-center ">
+            <p className="text-center sm:text-sm lg:text-2xl  ">
               Want to see AgriSage in Action?
             </p>
             <Link to="/signup">
-              <button className="mt-4 bg-green-900 text-white w-[200px] p-4 rounded-[10px] hover:bg-green-700">
+              <button className="mt-4 bg-green-700 text-white w-[200px] p-4 rounded-[10px] hover:bg-green-700">
                 Get Started
               </button>
             </Link>
           </div>
         </div>
 
-        <div className="text-center mt-[50px] h-[50vh]">
+        <div className="text-center  mt-[50px] h-[50vh]" id='about'>
           <p>About us</p>
           <p>Agrisage is created by three tremendous people </p>
           <div>
@@ -236,7 +255,7 @@ const Home = () => {
               </button>
             </div>
             {User.map((user, index) => (
-              <div className="flex  items-center align-center justify-center max-w-[auto] ">
+              <div className="flex   items-center align-center justify-center max-w-[auto] ">
                 {index === current && (
                   <div key={index} className="">
                     <div className="flex flex-col text-center items-center">
@@ -256,8 +275,8 @@ const Home = () => {
           </div>
         </div>
 
-        <div className="bg-slate-200 h-[20vh]  p-4 mt-[40px]">
-            <div className="flex justify-around mt-4">
+        <div className="bg-slate-200   footS  p-4 mt-[40px]" id='contact'>
+            <div className="flex justify-around TEXTh mt-4">
                 <div>
                     <p>About us</p>
                     <p>Shedrack - ML Engineer</p>
@@ -267,16 +286,16 @@ const Home = () => {
 
                 <div>
                     <p>Contact us</p>
-                    <p>shedrack@gmail.com</p>
+                    <p>adeyemishedracktimi@gmail.com</p>
                     <p>ayomide@gmail.com</p>
-                    <p>tomide@gmail.com</p>
+                    <p>adeyanjutomide@gmail.com</p>
                 </div>
 
                 <div>
                     <p>Connect with us</p>
-                    <p>shedrack@gmail.com</p>
+                    <p>adeyemishedracktimi@gmail.com</p>
                     <p>ayomide@gmail.com</p>
-                    <p>tomide@gmail.com</p>
+                    <p>adeyanjutomide@gmail.com</p>
                 </div>
 
             </div>

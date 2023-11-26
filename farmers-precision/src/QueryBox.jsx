@@ -2,68 +2,125 @@ import React, { useState, useContext, useEffect } from "react";
 import { userContext } from "./Firebase/userContext";
 import { useNavigate } from "react-router-dom";
 import Axios from "axios";
-const QueryBox = ({logemail}) => {
+const QueryBox = ({ logemail }) => {
   const {
     crop,
     setCrop,
-    city,
-    setCity,
+    country,
+    setCountry,
+    waterlevel,
+    setWaterlevel,
+    humidity,
+    setHumidity,
+    temperature,
+    setTemperature,
+    ph,
+    setPh,
     info,
     setInfo,
     logOut,
-    user
+    user,
   } = useContext(userContext);
-  const getCity = (e) => {
-      setCity(e.target.value)
-  }
+  const getCountry = (e) => {
+    setCountry(e.target.value);
+  };
   const getCrop = (e) => {
-      setCity(e.target.value)
-  }
-  console.log(user)
-  //const addInfo = (e) => {
-    //let formData = new FormData();//create a new form
-  //  formData.append("crop", crop);//add the data into teh form by simply appending 
-  //  formData.append("city", city);
+    setCrop(e.target.value);
+  };
+  const getPh = (e) => {
+    setPh(e.target.value);
+  };
+  const getWater = (e) => {
+    setWaterlevel(e.target.value);
+  };
+  const getHumid = (e) => {
+    setHumidity(e.target.value);
+  };
+  const getTemp = (e) => {
+    setTemperature(e.target.value);
+  };
+  console.log(user);
+  const addInfo = (e) => {
+    const jsonData = {
+      temperature,
+      humidity,
+      ph,
+      water_level: waterlevel,
+      crop,
+      country,
+    };
 
-    //Axios.post(
-   //   "https://book-backend-production.up.railway.app/addbook",
-   //   formData, //send the data through with the api endpoint
-    //  {
-    //    headers: { "Content-Type": "multipart/form-data" },
-    //  }
-   // ).then((response) => {
-    //  console.log(response);
-    //  setInfo(response)
-      
-  //  });
- // };
+  Axios.post(
+     "https://klusterthon-precision-farming.onrender.com/result",
+    jsonData, //send the data through with the api endpoint
+    {
+      headers: { "Content-Type": "application/json" },
+    }
+   ).then((response) => {
+    console.log(response.data);
+    setInfo(response.data)
+    console.log(info)
 
- const navigate = useNavigate()
- const handleSignout = async () => {
-  try {
-    await logOut();
-    navigate("/");
-  } catch (error) {
-    console.log(error);
-  }
-};
+   });
+  };
+
+  const navigate = useNavigate();
+  const handleSignout = async () => {
+    try {
+      await logOut();
+      navigate("/");
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const {data} = info
   return (
-    <div className="bg-slate-200 h-[100vh] ">
+    <div className="bg-white h-[100vh]  p-4">
       <div className="flex justify-between p-4">
-      <p>Welcome, {logemail}</p>
-      <button
-        className="p-4 bg-slate-500 text-white  rounded "
-        onClick={handleSignout}
-      >
-        Logout{" "}
-      </button>
+        <p>Welcome, {logemail}</p>
+        <button
+          className="p-4 bg-green-700 text-white  rounded "
+          onClick={handleSignout}
+        >
+          Logout{" "}
+        </button>
       </div>
-      
+
       <div className="flex items-center  h-[50vh] justify-center align-center">
-        <p>Get your Response </p>
+          The harvest data is:  <p className="font-extrabold">{data}</p>
+       
       </div>
 
       <div className="flex items-center  h-[50vh] justify-center align-center flex-col gap-4">
+        <input
+          type="text"
+          value={temperature}
+          onChange={getTemp}
+          placeholder="input temperature"
+          className="lg:w-[500px] rounded-[10px] xs:w-[80vw] sm:w-[50vw] p-4 border-slate-900 border-2"
+        />
+        <input
+          type="text"
+          value={humidity}
+          onChange={getHumid}
+          placeholder="input the humidity"
+          className=" border-2 border-slate-900 lg:w-[500px] xs:w-[80vw] sm:w-[50vw] rounded-[10px] p-4"
+        />
+        <input
+          type="text"
+          value={ph}
+          onChange={getPh}
+          placeholder="input the PH"
+          className="lg:w-[500px] rounded-[10px] xs:w-[80vw] sm:w-[50vw] p-4 border-slate-900 border-2"
+        />
+        <input
+          type="text"
+          value={waterlevel}
+          onChange={getWater}
+          placeholder="input the waterlevel"
+          className=" border-2 border-slate-900 lg:w-[500px] xs:w-[80vw] sm:w-[50vw] rounded-[10px] p-4"
+        />
         <input
           type="text"
           value={crop}
@@ -73,12 +130,12 @@ const QueryBox = ({logemail}) => {
         />
         <input
           type="text"
-          value={city}
-          onChange={getCity}
-          placeholder="input the name of the city"
+          value={country}
+          onChange={getCountry}
+          placeholder="input the name of the country"
           className=" border-2 border-slate-900 lg:w-[500px] xs:w-[80vw] sm:w-[50vw] rounded-[10px] p-4"
         />
-        <button className="bg-green-900 text-white p-4 rounded-[10px] w-[100px] hover:bg-slate-500 hover:text-slate-800 text-extrabold">
+        <button onClick={addInfo} className="bg-green-900 text-white p-4 rounded-[10px] w-[100px] hover:bg-slate-500 hover:text-slate-800 text-extrabold">
           Send
         </button>
       </div>
