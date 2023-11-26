@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { userContext } from "./Firebase/userContext";
 
 const Login = () => {
-  const { login, logError } = useContext(userContext);
+  const { login, logError, user } = useContext(userContext);
   const navigate = useNavigate();
 
   const [logpassword, setLogPassword] = useState("");
@@ -15,7 +15,7 @@ const Login = () => {
     try {
       await login(logemail, logpassword);
       navigate("/query");
-      console.log(logemail)
+      console.log(user)
       setLoading(!loading)
     } catch (err) {
       console.log(err.message);

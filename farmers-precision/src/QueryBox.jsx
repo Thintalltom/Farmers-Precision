@@ -1,5 +1,6 @@
 import React, { useState, useContext, useEffect } from "react";
 import { userContext } from "./Firebase/userContext";
+import { useNavigate } from "react-router-dom";
 import Axios from "axios";
 const QueryBox = () => {
   const {
@@ -10,6 +11,7 @@ const QueryBox = () => {
     info,
     setInfo,
     logOut,
+    user
   } = useContext(userContext);
   const getCity = (e) => {
       setCity(e.target.value)
@@ -17,6 +19,7 @@ const QueryBox = () => {
   const getCrop = (e) => {
       setCity(e.target.value)
   }
+  console.log(user)
   //const addInfo = (e) => {
     //let formData = new FormData();//create a new form
   //  formData.append("crop", crop);//add the data into teh form by simply appending 
@@ -34,8 +37,24 @@ const QueryBox = () => {
       
   //  });
  // };
+
+ const navigate = useNavigate()
+ const handleSignout = async () => {
+  try {
+    await logOut();
+    navigate("/");
+  } catch (error) {
+    console.log(error);
+  }
+};
   return (
     <div className="bg-slate-200 h-[100vh] ">
+      <button
+        className="p-4 bg-slate-500 text-white  rounded "
+        onClick={handleSignout}
+      >
+        Logout{" "}
+      </button>
       <div className="flex items-center  h-[50vh] justify-center align-center">
         <p>Get your Response </p>
       </div>

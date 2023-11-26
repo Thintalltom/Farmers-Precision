@@ -33,3 +33,17 @@
         display: none;
     }
 }
+.gridSys
+{
+    display: grid;
+    grid-template-columns: auto auto;
+ 
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+   
+}
+.roundedFig
+{
+    clip-path: circle() !important;
+}

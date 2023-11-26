@@ -8,10 +8,12 @@ import {
 } from "firebase/auth";
 export const userContext = createContext();
 export const UserProvider = (props) => {
-  const [user, setUser] = useState(null);
+  const [user, setUser] = useState({});
   const [crop, setCrop] = useState("");
   const [city, setCity] = useState("");
   const [info, setInfo] = useState([]);
+  const [logpassword, setLogPassword] = useState("");
+  const [logemail, setLogEmail] = useState("");
   const signUp = (email, password) => {
     //return the function
     return createUserWithEmailAndPassword(auth, email, password);
@@ -45,7 +47,7 @@ export const UserProvider = (props) => {
         info,
         setInfo,
         signUp,
-        logOut,
+       
       }}
     >
       {props.children}{" "}
