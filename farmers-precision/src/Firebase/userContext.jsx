@@ -9,6 +9,9 @@ import {
 export const userContext = createContext();
 export const UserProvider = (props) => {
   const [user, setUser] = useState(null);
+  const [crop, setCrop] = useState("");
+  const [city, setCity] = useState("");
+  const [info, setInfo] = useState([]);
   const signUp = (email, password) => {
     //return the function
     return createUserWithEmailAndPassword(auth, email, password);
@@ -35,7 +38,12 @@ export const UserProvider = (props) => {
     <userContext.Provider
       value={{
         login,
-
+        crop,
+        setCrop,
+        city,
+        setCity,
+        info,
+        setInfo,
         signUp,
         logOut,
       }}
