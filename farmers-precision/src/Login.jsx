@@ -3,12 +3,12 @@ import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { userContext } from "./Firebase/userContext";
 
-const Login = () => {
+const Login = ({logpassword, setLogPassword, logemail, setLogEmail}) => {
   const { login, logError, user } = useContext(userContext);
   const navigate = useNavigate();
 
-  const [logpassword, setLogPassword] = useState("");
-  const [logemail, setLogEmail] = useState("");
+ // const [logpassword, setLogPassword] = useState("");
+ // const [logemail, setLogEmail] = useState("");
     const[loading, setLoading] = useState(true)
   const handleLogin = async (e) => {
     e.preventDefault();

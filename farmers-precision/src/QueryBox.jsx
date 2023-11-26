@@ -2,7 +2,7 @@ import React, { useState, useContext, useEffect } from "react";
 import { userContext } from "./Firebase/userContext";
 import { useNavigate } from "react-router-dom";
 import Axios from "axios";
-const QueryBox = () => {
+const QueryBox = ({logemail}) => {
   const {
     crop,
     setCrop,
@@ -49,12 +49,16 @@ const QueryBox = () => {
 };
   return (
     <div className="bg-slate-200 h-[100vh] ">
+      <div className="flex justify-between p-4">
+      <p>Welcome, {logemail}</p>
       <button
         className="p-4 bg-slate-500 text-white  rounded "
         onClick={handleSignout}
       >
         Logout{" "}
       </button>
+      </div>
+      
       <div className="flex items-center  h-[50vh] justify-center align-center">
         <p>Get your Response </p>
       </div>

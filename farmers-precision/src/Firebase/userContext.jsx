@@ -47,6 +47,7 @@ export const UserProvider = (props) => {
         info,
         setInfo,
         signUp,
+        logOut
        
       }}
     >
