@@ -48,7 +48,7 @@ const Home = () => {
         {/*Banner Section*/}
         <section name="home">
           <div className="flex  precision flex-col h-[40vh]  justify-center items-center align-center">
-            <p className=" mt-[40px] text-white precision2 sm:font-extrabold lg:text-5xl sm:text-sm sm:text-center text-extrabold">
+            <p className=" mt-[40px] text-white precision2 sm:font-extrabold lg:text-5xl xl:text-5xl xxl:text-5xl sm:text-sm sm:text-center text-extrabold">
               Welcome to Agrisage – Where Precision Meets Agriculture! 🌾
             </p>
             <p className="text-center precision3 text-white text-extrathin   mt-4 w-[700px]">
