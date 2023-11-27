@@ -88,11 +88,13 @@ const QueryBox = ({ logemail }) => {
       </div>
 
       <div className="flex items-center  h-[50vh] justify-center align-center">
-          The harvest data is:  <p className="font-extrabold">{data}</p>
+         <p>To predict your crop's harvest season kindly fill in your crop's name, soil condition, weather information and location in the boxes provided below </p>
+          
        
       </div>
 
       <div className="flex items-center  h-[50vh] justify-center align-center flex-col gap-4">
+        <p>The best time to harvest your crop is: {data} season </p>
         <input
           type="text"
           value={temperature}

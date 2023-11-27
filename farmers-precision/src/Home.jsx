@@ -10,11 +10,7 @@ import tomide from "./assets/tomide.jpg";
 import Navbar from "./Navbar";
 
 const Home = () => {
-  const [open, setOpen] = useState(false);
 
-  const handleClick = () => {
-    setOpen(!open);
-  };
   const User = [
     {
       photo: shedrack,
@@ -172,7 +168,7 @@ const Home = () => {
             <p className="text-center sm:text-sm lg:text-2xl  ">
               Want to see AgriSage in Action?
             </p>
-           <Link to='/signup'>
+           <Link to='/query'>
               <button  className="mt-4 bg-green-700 text-white w-[200px] p-4 rounded-[10px] hover:bg-green-700">
                 Get Started
               </button>
