@@ -77,15 +77,7 @@ const QueryBox = ({ logemail }) => {
   const {data} = info
   return (
     <div className="bg-white h-[100vh]  p-4">
-      <div className="flex justify-between p-4">
-        <p>Welcome, {logemail}</p>
-        <button
-          className="p-4 bg-green-700 text-white  rounded "
-          onClick={handleSignout}
-        >
-          Logout{" "}
-        </button>
-      </div>
+  
 
       <div className="flex items-center  h-[50vh] justify-center align-center">
          <p>To predict your crop's harvest season kindly fill in your crop's name, soil condition, weather information and location in the boxes provided below </p>
