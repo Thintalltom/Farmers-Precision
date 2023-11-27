@@ -14,8 +14,8 @@ const Home = () => {
   const User = [
     {
       photo: shedrack,
-      text: "ML developer",
-      name: "Shedrack",
+      text: "Data Scientist/ML developer",
+      name: "Shadrack",
     },
     {
       photo: taiwo,
@@ -243,11 +243,11 @@ const Home = () => {
               </p>
               <p className="text-slate-600">
                 {" "}
-                <a href="mailto:adeyanjutomide@gmail.com"> Mail tomide</a>
+                <a href="mailto:adeyanjutomide@gmail.com"> Mail Tomide</a>
               </p>
               <p className="text-slate-600">
                 {" "}
-                <a href="mailto:ayomidet905@gmail.com"> Mail taiwo</a>
+                <a href="mailto:ayomidet905@gmail.com"> Mail Taiwo</a>
               </p>
             </div>
 
