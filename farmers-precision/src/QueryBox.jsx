@@ -86,7 +86,7 @@ const QueryBox = ({ logemail }) => {
       </div>
 
       <div className="flex items-center  h-[50vh] justify-center align-center flex-col gap-4">
-        <p>The best time to harvest your crop is: {info != null ? <p>{data} season </p> : <p>loading </p> }</p>
+        <p>The best time to harvest your crop is: {info === null ? <p>loading </p> : <p>{data} season </p> }</p>
         <input
           type="text"
           value={temperature}
