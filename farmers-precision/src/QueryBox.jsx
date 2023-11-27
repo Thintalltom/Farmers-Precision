@@ -39,7 +39,9 @@ const QueryBox = ({ logemail }) => {
   const getTemp = (e) => {
     setTemperature(e.target.value);
   };
-  console.log(user);
+
+  const[timer, setTimer] = useState(false)
+  const[loading, setLoading] = useState(false)
   const addInfo = (e) => {
     const jsonData = {
       temperature,
@@ -49,20 +51,37 @@ const QueryBox = ({ logemail }) => {
       crop,
       country,
     };
-
-  Axios.post(
-     "https://klusterthon-precision-farming.onrender.com/result",
-    jsonData, //send the data through with the api endpoint
-    {
-      headers: { "Content-Type": "application/json" },
-    }
-   ).then((response) => {
-    console.log(response.data);
-    setInfo(response.data)
-    console.log(info)
-
-   });
+  
+    // Set loading to true when starting the API call
+    setLoading(true);
+  
+    Axios.post(
+      "https://klusterthon-precision-farming.onrender.com/result",
+      jsonData,
+      {
+        headers: { "Content-Type": "application/json" },
+      }
+    )
+    .then((response) => {
+      // Process the response as needed
+      setInfo(response.data);
+      console.log(info)
+    })
+    .catch((error) => {
+      // Handle errors if necessary
+      console.error("Error fetching data:", error);
+    })
+    .finally(() => {
+      // Set loading back to false regardless of success or failure
+      setLoading(false);
+      // Toggle the timer
+      setTimer(!timer);
+    });
   };
+  
+
+ 
+  
 
   const navigate = useNavigate();
   const handleSignout = async () => {
@@ -74,9 +93,9 @@ const QueryBox = ({ logemail }) => {
     }
   };
 
-  const {data} = info || {}
+ 
   return (
-    <div className="bg-white h-[100vh] p-4">
+    <div className="h-[100vh] p-[30px] ">
   
 
       <div className="flex items-center   h-[50vh] justify-center align-center mt-[-50px] p-4 ">
@@ -85,8 +104,12 @@ const QueryBox = ({ logemail }) => {
        
       </div>
 
-      <div className="flex items-center  h-[50vh] justify-center align-center flex-col gap-4">
-        <p>The best time to harvest your crop is: {info === null ? <p>loading </p> : <p>{data} season </p> }</p>
+      <div className="flex items-center  mt-[-150px] h-[80vh] justify-center align-center flex-col gap-4">
+        <p>The best time to harvest your crop is:  {info === null ? (
+    <p>no data yet</p>
+  ) : (
+    <p>{info.data} season</p>
+  )}</p>
         <input
           type="text"
           value={temperature}
@@ -129,9 +152,16 @@ const QueryBox = ({ logemail }) => {
           placeholder="input the name of the country"
           className=" border-2 border-slate-900 lg:w-[500px] xs:w-[80vw] sm:w-[50vw] rounded-[10px] p-4"
         />
-        <button onClick={addInfo} className="bg-green-900 text-white p-4 rounded-[10px] w-[100px] hover:bg-slate-500 hover:text-slate-800 text-extrabold">
-          Send
-        </button>
+        {loading ? (
+      // Display a loading message or spinner when data is being fetched
+      <p>Loading...</p>
+    ) : (
+      // Display the "send" div when not loading
+      <div>
+        {/* Your "send" div content goes here */}
+        <button onClick={addInfo} className='text-white bg-green-700 rounded-[2px] w-[100px] h-[30px]'>Send</button>
+      </div>
+    )}
       </div>
     </div>
   );

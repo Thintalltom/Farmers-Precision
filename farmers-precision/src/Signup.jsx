@@ -6,21 +6,25 @@ const Signup = () => {
   const { signUp, error } = useContext(userContext);
   const [password, setPassword] = useState("");
   const [email, setEmail] = useState("");
-  const [signupError, setSignupError] = useState(null); 
+  const [signupError, setSignupError] = useState({}); 
   const navigate = useNavigate();
+  const[loading, setLoading] = useState(false)
   const handleSignup = async (e) => {
     e.preventDefault();
     try {
       await signUp(email, password);
       navigate("/login");
-    } catch (err) {
-      console.error(err);
-      setSignupError(err);  // Log the error for debugging
+    } catch (Error) {
+      console.log(Error);
+      setSignupError(err); 
+      
+       // Log the error for debugging
       // Handle the error, for example, update a state to display an error message
     }
   };
   return (
     <div name='signup' className="w-[100vw] h-[100vh] flex-col flex  items-center justify-center bg-white">
+      {signupError && <p>{signupError.err}</p>}
       <p className="text-slate-900 mb-4 font-bold">Register Account</p>
       <div className="text-slate-900 flex  items-center justify-center">
         <form className="flex flex-col gap-9" onSubmit={handleSignup}>

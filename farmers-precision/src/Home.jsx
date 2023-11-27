@@ -47,11 +47,11 @@ const Home = () => {
        <Navbar />
         {/*Banner Section*/}
         <section name="home">
-          <div className="flex  precision flex-col h-[40vh]  justify-center items-center align-center">
-            <p className=" mt-[40px] text-white precision2 sm:font-extrabold lg:text-5xl xl:text-5xl xxl:text-5xl sm:text-sm sm:text-center text-extrabold">
+          <div className="flex  precision  flex-col h-[60vh]  justify-center items-center align-center">
+            <p className=" bg-yellow-500 mt-[40px] text-white precision2 sm:font-extrabold lg:text-5xl xl:text-5xl xxl:text-5xl sm:text-sm sm:text-center text-extrabold">
               Welcome to Agrisage – Where Precision Meets Agriculture! 🌾
             </p>
-            <p className="text-center precision3 text-white text-extrathin   mt-4 w-[700px]">
+            <p className="text-center precision3 bg-red-500 text-white text-extrathin   mt-4 w-[700px]">
               At AgriSage, we're redefining agriculture through the power of
               precision AI. Step into a realm where technology and nature
               seamlessly converge to optimize your farm's potential.
@@ -60,7 +60,7 @@ const Home = () => {
         </section>
 
         {/*Features Section*/}
-        <section className="mt-[50px] features " name="features">
+        <section className="mt-[-20px] features " name="features">
           <p className="text-center font-extrabold text-2xl  text-slate-200">
             Key Features
           </p>
@@ -117,7 +117,7 @@ const Home = () => {
             </div>
           </div>
 
-          <div className="gridSys ">
+          <div className="gridSys2 ">
             <div className="holdFlex">
               <div className=" flexBxx  w-[400px] rounded-[10px] flex justify-center">
                 <img src={login} className="w-[250px]" />
@@ -171,6 +171,11 @@ const Home = () => {
            <Link to='/query'>
               <button  className="mt-4 bg-green-700 text-white w-[200px] p-4 rounded-[10px] hover:bg-green-700">
                 Get Started
+              </button>
+              </Link>
+              <Link to='/signup'>
+              <button  className="mt-4 bg-green-700 text-white w-[200px] p-4 rounded-[10px] hover:bg-green-700">
+                Register
               </button>
               </Link>
           </div>

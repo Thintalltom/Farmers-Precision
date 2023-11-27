@@ -15,7 +15,7 @@ export const UserProvider = (props) => {
   const [humidity, setHumidity] = useState("");
   const [temperature, setTemperature] = useState("");
   const [ph, setPh] = useState("");
-  const [info, setInfo] = useState({});
+  const [info, setInfo] = useState(null);
   const [logpassword, setLogPassword] = useState("");
   const [logemail, setLogEmail] = useState("");
   const signUp = (email, password) => {

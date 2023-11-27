@@ -22,8 +22,8 @@
     gap: 20px;
     color: white;
     z-index: 2;
-    width: 320px;
-    margin-top: 10px;
+    width: 370px;
+    margin-top: 40px;
   }
   .CTAB .CTA{
     width: 300px !important;
@@ -37,7 +37,8 @@
   }
   .precision .precision3 {
     font-size: small;
-    width: 260px;
+    width: 260px !important;
+   
   }
   .features .features2 {
     display: flex;
@@ -56,6 +57,10 @@
   .gridSys {
     display: flex;
     flex-direction: column !important;
+  }
+  .gridSys2 {
+    display: flex;
+    flex-direction: column-reverse !important;
   }
   .flexBxx {
     width: 300px !important;
@@ -110,4 +115,11 @@ html {
   display: flex;
  
   width: 100vw;
+}
+.precision .precision3 {
+  font-size: small;
+  width: 500px;
+  
+  margin-top: 80px;
+  padding: 10px;
 }

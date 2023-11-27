@@ -1,4 +1,4 @@
-import React,{useState} from 'react'
+import React,{useState, useEffect} from 'react'
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-scroll";
 import "./Home.css";
@@ -8,6 +8,12 @@ const Navbar = () => {
     const handleClick = () => {
       setOpen(!open);
     };
+
+    const handleItem = () => {
+      setOpen(false)
+    }
+
+  
   return (
     <div>
          <div className="flex justify-around bg-green-700 text-white p-4 home2 ">
@@ -56,29 +62,29 @@ const Navbar = () => {
                 : "header3 lg:hidden"
             }
           >
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-            <Link to="home" smooth={true} duration={500}>
+            <p  onClick={() => setOpen(false)} className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
+            <Link to="home" smooth={true} duration={500} >
                 Home
               </Link>
             </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
+            <p  onClick={() => setOpen(false)} className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
               <Link to="features" smooth={true} duration={500}>
                 Features
               </Link>
             </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
+            <p  onClick={handleItem} className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
               <Link to="works" smooth={true} duration={500}>
                 How it works
               </Link>
             </p>
 
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
+            <p  onClick={() => setOpen(false)} className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
               <Link to="about" smooth={true} duration={500}>
                 About us
               </Link>
             </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="contact" smooth={true} duration={500}>
+            <p onClick={() => setOpen(false)}  className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
+              <Link  to="contact" smooth={true} duration={500}>
                 Contact
               </Link>
             </p>
