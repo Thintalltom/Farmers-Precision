@@ -1,18 +1,17 @@
 import React, { useState } from "react";
 import "./Home.css";
-import {  useNavigate } from "react-router-dom";
+import {  Link } from "react-router-dom";
 import login from "./assets/login.png";
 import signup from "./assets/signup.png";
 import response from "./assets/response.png";
 import shedrack from "./assets/shedrack.jpg";
 import taiwo from "./assets/ayo.jpg";
 import tomide from "./assets/tomide.jpg";
-import { FiMenu, FiX } from "react-icons/fi";
-import { Link } from "react-scroll";
+import Navbar from "./Navbar";
 
 const Home = () => {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate()
+
   const handleClick = () => {
     setOpen(!open);
   };
@@ -49,81 +48,7 @@ const Home = () => {
   return (
     <div className="home1 ">
       <div className="bg-green-700 h-[70vh]">
-        <div className="flex justify-around bg-green-700 text-white p-4 home2 ">
-          <p> Agrisage</p>
-          <div className="flex gap-9 text-white">
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-            <Link to="home" smooth={true} duration={500}>
-                Home
-              </Link>
-            </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="features" smooth={true} duration={500}>
-                Features
-              </Link>
-            </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="works" smooth={true} duration={500}>
-                How it works
-              </Link>
-            </p>
-
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="about" smooth={true} duration={500}>
-                About us
-              </Link>
-            </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="contact" smooth={true} duration={500}>
-                Contact
-              </Link>
-            </p>
-          </div>
-        </div>
-
-        {/*Navbar for small screen*/}
-        <div className="bg-green-700 shadow-md">
-          <div className="header text-white bg-green-700  shadow-md lg:hidden">
-            <p> Agrisage</p>
-
-            <div onClick={handleClick}>{open ? <FiMenu /> : <FiX />}</div>
-          </div>
-          <div
-            className={
-              !open
-                ? "header2 bg-green-700 shadow-sm lg:hidden"
-                : "header3 lg:hidden"
-            }
-          >
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-            <Link to="home" smooth={true} duration={500}>
-                Home
-              </Link>
-            </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="features" smooth={true} duration={500}>
-                Features
-              </Link>
-            </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="works" smooth={true} duration={500}>
-                How it works
-              </Link>
-            </p>
-
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="about" smooth={true} duration={500}>
-                About us
-              </Link>
-            </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="contact" smooth={true} duration={500}>
-                Contact
-              </Link>
-            </p>
-          </div>
-        </div>
-
+       <Navbar />
         {/*Banner Section*/}
         <section name="home">
           <div className="flex  precision flex-col h-[40vh]  justify-center items-center align-center">
@@ -248,7 +173,7 @@ const Home = () => {
               Want to see AgriSage in Action?
             </p>
            <Link to='/signup'>
-              <button onClick={navigate('/signup')} className="mt-4 bg-green-700 text-white w-[200px] p-4 rounded-[10px] hover:bg-green-700">
+              <button  className="mt-4 bg-green-700 text-white w-[200px] p-4 rounded-[10px] hover:bg-green-700">
                 Get Started
               </button>
               </Link>
