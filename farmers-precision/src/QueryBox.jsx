@@ -74,7 +74,7 @@ const QueryBox = ({ logemail }) => {
     }
   };
 
-  const {data} = info
+  const {data} = info || {}
   return (
     <div className="bg-white h-[100vh] p-4">
   
