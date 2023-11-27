@@ -79,7 +79,7 @@ const QueryBox = ({ logemail }) => {
     <div className="bg-white h-[100vh] p-4">
   
 
-      <div className="flex items-center bg-red-500  h-[50vh] justify-center align-center mt-[-50px] ">
+      <div className="flex items-center   h-[50vh] justify-center align-center mt-[-50px] p-4 ">
          <p className='mt-[-150px]'>To predict your crop's harvest season kindly fill in your crop's name, soil condition, weather information and location in the boxes provided below </p>
           
        
