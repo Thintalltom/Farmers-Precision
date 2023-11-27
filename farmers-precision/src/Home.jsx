@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import "./Home.css";
+import {  useNavigate } from "react-router-dom";
 import login from "./assets/login.png";
 import signup from "./assets/signup.png";
 import response from "./assets/response.png";
@@ -8,9 +9,10 @@ import taiwo from "./assets/ayo.jpg";
 import tomide from "./assets/tomide.jpg";
 import { FiMenu, FiX } from "react-icons/fi";
 import { Link } from "react-scroll";
+
 const Home = () => {
   const [open, setOpen] = useState(false);
-
+  const navigate = useNavigate()
   const handleClick = () => {
     setOpen(!open);
   };
@@ -245,11 +247,11 @@ const Home = () => {
             <p className="text-center sm:text-sm lg:text-2xl  ">
               Want to see AgriSage in Action?
             </p>
-            <Link to="/signup">
-              <button className="mt-4 bg-green-700 text-white w-[200px] p-4 rounded-[10px] hover:bg-green-700">
+           <Link to='/signup'>
+              <button onClick={navigate('/signup')} className="mt-4 bg-green-700 text-white w-[200px] p-4 rounded-[10px] hover:bg-green-700">
                 Get Started
               </button>
-            </Link>
+              </Link>
           </div>
         </section>
 
