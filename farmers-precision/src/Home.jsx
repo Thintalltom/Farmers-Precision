@@ -242,7 +242,7 @@ const Home = () => {
               </p>
               <p className="text-slate-600">
                 {" "}
-                <a href="mailto:ayomide@gmail.com"> Mail taiwo</a>
+                <a href="mailto:ayomidet905@gmail.com"> Mail taiwo</a>
               </p>
             </div>
 
