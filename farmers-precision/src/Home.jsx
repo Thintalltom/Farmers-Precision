@@ -3,7 +3,11 @@ import "./Home.css";
 import login from "./assets/login.png";
 import signup from "./assets/signup.png";
 import response from "./assets/response.png";
-import { Link } from "react-router-dom";
+import shedrack from "./assets/shedrack.jpg";
+import taiwo from "./assets/ayo.jpg";
+import tomide from "./assets/tomide.jpg";
+import { FiMenu, FiX } from "react-icons/fi";
+import { Link } from "react-scroll";
 const Home = () => {
   const [open, setOpen] = useState(false);
 
@@ -12,20 +16,17 @@ const Home = () => {
   };
   const User = [
     {
-      photo:
-        "https://media.istockphoto.com/id/1410538853/photo/young-man-in-the-public-park.webp?b=1&s=170667a&w=0&k=20&c=pGdjFVdK-_BhTa6PMy5VNcXdbxVNngzg-OPzMfJKrG8=",
+      photo: shedrack,
       text: "ML developer",
       name: "Shedrack",
     },
     {
-      photo:
-        "https://media.istockphoto.com/id/1388645967/photo/pensive-thoughtful-contemplating-caucasian-young-man-thinking-about-future-planning-new.webp?b=1&s=170667a&w=0&k=20&c=iSQUfWESVgOxHtV5X7lrNxxzaf4b7fMrmI3dXxrFNbQ=",
+      photo: taiwo,
       text: "Backend Developer",
       name: "Taiwo",
     },
     {
-      photo:
-        "https://media.istockphoto.com/id/1446934118/photo/happy-business-man-listening-to-a-discussion-in-an-office.webp?b=1&s=170667a&w=0&k=20&c=Glt32OkYik_UecuUajJQrY2i52QdwlxSAgXejVrRfqM=",
+      photo: tomide,
       text: "Frontend Developer",
       name: "Tomide",
     },
@@ -46,76 +47,85 @@ const Home = () => {
   return (
     <div className="home1 ">
       <div className="bg-green-700 h-[70vh]">
-        <div className="flex justify-around text-white p-4 home2 ">
+        <div className="flex justify-around bg-green-700 text-white p-4 home2 ">
           <p> Agrisage</p>
           <div className="flex gap-9 text-white">
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              Home
+            <Link to="home" smooth={true} duration={500}>
+                Home
+              </Link>
             </p>
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <a href='#features'>
-              Features
-              </a>
-             
+              <Link to="features" smooth={true} duration={500}>
+                Features
+              </Link>
             </p>
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-            <a href='#works'>
-              How it Works
-              </a>
+              <Link to="works" smooth={true} duration={500}>
+                How it works
+              </Link>
             </p>
-          
+
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-            <a href='#about'>
-             About us
-              </a>
+              <Link to="about" smooth={true} duration={500}>
+                About us
+              </Link>
             </p>
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-            <a href='#contact'>
-              Contact
-              </a>
+              <Link to="contact" smooth={true} duration={500}>
+                Contact
+              </Link>
             </p>
           </div>
         </div>
+
+        {/*Navbar for small screen*/}
         <div className="bg-green-700 shadow-md">
-          <div className="header text-white  shadow-md lg:hidden">
+          <div className="header text-white bg-green-700  shadow-md lg:hidden">
             <p> Agrisage</p>
 
-            <div  onClick={handleClick}>{open ? <p>open</p> : <p>close</p>}</div>
+            <div onClick={handleClick}>{open ? <FiMenu /> : <FiX />}</div>
           </div>
           <div
             className={
-              !open ? "header2 bg-green-700 shadow-sm lg:hidden" : "header3 lg:hidden"
+              !open
+                ? "header2 bg-green-700 shadow-sm lg:hidden"
+                : "header3 lg:hidden"
             }
           >
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              Home
+            <Link to="home" smooth={true} duration={500}>
+                Home
+              </Link>
             </p>
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-            <a id='features'>
-              Features
-              </a>
+              <Link to="features" smooth={true} duration={500}>
+                Features
+              </Link>
             </p>
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-            <a id='works'>
-              How it Works
-              </a>
+              <Link to="works" smooth={true} duration={500}>
+                How it works
+              </Link>
             </p>
-          
+
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-            <a id='about'>
-             About us
-              </a>
+              <Link to="about" smooth={true} duration={500}>
+                About us
+              </Link>
             </p>
             <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-            <a id='contact'>
-              Contact
-              </a>
+              <Link to="contact" smooth={true} duration={500}>
+                Contact
+              </Link>
             </p>
           </div>
         </div>
-        <div id='home'>
+
+        {/*Banner Section*/}
+        <section name="home">
           <div className="flex  precision flex-col h-[40vh]  justify-center items-center align-center">
-            <p className=" text-white precision2 sm:font-extrabold lg:text-5xl sm:text-sm sm:text-center text-extrabold">
+            <p className=" mt-[40px] text-white precision2 sm:font-extrabold lg:text-5xl sm:text-sm sm:text-center text-extrabold">
               Welcome to Agrisage – Where Precision Meets Agriculture! 🌾
             </p>
             <p className="text-center precision3 text-white text-extrathin   mt-4 w-[700px]">
@@ -124,13 +134,16 @@ const Home = () => {
               seamlessly converge to optimize your farm's potential.
             </p>
           </div>
-        </div>
+        </section>
 
-        <div className="mt-[50px] features " id='features'>
-          <p className="text-center font-extrabold text-2xl  text-slate-200">Key Features</p>
+        {/*Features Section*/}
+        <section className="mt-[50px] features " name="features">
+          <p className="text-center font-extrabold text-2xl  text-slate-200">
+            Key Features
+          </p>
           <div className="flex justify-around  mt-4 features2">
             <div className="bg-white p-4 w-[300px] text-center h-[200px] rounded-lg shadow-lg">
-              <p className='font-extrabold'>Empowering Farmers</p>
+              <p className="font-extrabold">Empowering Farmers</p>
               <p className="text-sm text-slate-600 mt-[25px]">
                 Join a community of forward-thinking farmers embracing the
                 future of agriculture. Access ongoing support, training, and
@@ -138,7 +151,7 @@ const Home = () => {
               </p>
             </div>
             <div className="bg-white p-4 w-[300px]  text-center h-[200px] rounded-lg shadow-lg">
-              <p className='font-extrabold'>Smart Cropping</p>
+              <p className="font-extrabold">Smart Cropping</p>
               <p className=" text-sm text-slate-600 mt-[25px]">
                 {" "}
                 Gain real-time insights into your crop health and growth.
@@ -147,7 +160,7 @@ const Home = () => {
               </p>
             </div>
             <div className="bg-white p-4 w-[300px] text-center h-[200px] rounded-lg shadow-lg">
-              <p className='font-extrabold'>Data Driven Precision</p>
+              <p className="font-extrabold">Data Driven Precision</p>
               <p className="text-sm text-slate-600 mt-[25px]">
                 Make informed decisions based on accurate and timely data.
                 Leverage advanced analytics to enhance crop planning and
@@ -155,9 +168,10 @@ const Home = () => {
               </p>
             </div>
           </div>
-        </div>
+        </section>
 
-        <section className="  mt-[90px] " id='works'>
+        {/*Works Section*/}
+        <section className="  mt-[90px] " name="works">
           <p className="text-center font-extrabold mt-[20px] text-xl mt-[50px]">
             How it works
           </p>
@@ -169,24 +183,24 @@ const Home = () => {
               </p>
               <p className="text-slate-500">🌱 Why Join AgriSage?</p>
               <p className=" lg:w-[400px] sm:w-[200px]  text-slate-500">
-                Unlock a world of possibilities Personalized Insights Community
-                Connection Exclusive Resources
+                🌱 Unlock a world of possibilities Personalized Insights
+                Community 🌱 Connection Exclusive Resources
               </p>
             </div>
             <div className="holdFlex ">
-            <div className=" w-[400px] rounded-[10px] flexBxx flex justify-center">
-              <img src={signup} className="w-[250px] flexImg" />
-            </div>
+              <div className=" w-[400px] rounded-[10px] flexBxx flex justify-center">
+                <img src={signup} className="w-[250px] flexImg" />
+              </div>
             </div>
           </div>
 
           <div className="gridSys ">
-              <div className="holdFlex">
+            <div className="holdFlex">
               <div className=" flexBxx  w-[400px] rounded-[10px] flex justify-center">
-              <img src={login} className="w-[250px]" />
-            </div>
+                <img src={login} className="w-[250px]" />
               </div>
-            
+            </div>
+
             <div className="gridSys1 ">
               <p className="lg:text-2xl holdT sm:text-xl  ">
                 Welcome to the heart of AgriSage precision technology!
@@ -196,34 +210,37 @@ const Home = () => {
                 let's take you through a seamless journey.
               </p>
               <p className="sm:w-[150px] lg:w-[500px] text-slate-500">
-                Explore Features <br />
-                Access to advanced tools
+                🌱 Explore Features <br />
+                🌱 Access to advanced tools
               </p>
             </div>
           </div>
 
-          <div className="gridSys " >
+          <div className="gridSys ">
             <div className="gridSys1 ">
-              <p className="lg:text-2xl sm:text-xl holdT ">See Our Precision AI in Action</p>
+              <p className="lg:text-2xl sm:text-xl holdT ">
+                See Our Precision AI in Action
+              </p>
               <p className="text-slate-500 gridText  w-[600px]">
                 🌱 To unlock the full potential of our AI-driven solutions,
                 let's take you through a seamless journey.
               </p>
               <p className=" sm:w-[150px] lg:w-[500px]  text-slate-500">
-                Real-time Monitoring <br />
-                Automation in Action <br />
-                Predictive Analysis
+                🌱 Real-time Monitoring <br />
+                🌱 Automation in Action <br />
+                🌱 Predictive Analysis
               </p>
             </div>
             <div className="holdFlex">
-            <div className="flexBxx  w-[400px] rounded-[10px] flex justify-center">
-              <img src={response} className="w-[250px] " />
-            </div>
+              <div className="flexBxx  w-[400px] rounded-[10px] flex justify-center">
+                <img src={response} className="w-[250px] " />
+              </div>
             </div>
           </div>
         </section>
 
-        <div className="flex justify-center  p-4 items-center align-center CTAB">
+        {/*CTA Section*/}
+        <section className="flex justify-center  p-4 items-center align-center CTAB">
           <div className="CTA flex-col bg-slate-100  rounded-[30px] mt-[100px] h-[300px] lg:w-[800px] sm:w-[500px] flex justify-center align-center items-center ">
             <p className="text-center sm:text-sm lg:text-2xl  ">
               Want to see AgriSage in Action?
@@ -234,22 +251,24 @@ const Home = () => {
               </button>
             </Link>
           </div>
-        </div>
+        </section>
 
-        <div className="text-center  mt-[50px] h-[50vh]" id='about'>
-          <p>About us</p>
-          <p>Agrisage is created by three tremendous people </p>
+        {/*About Section*/}
+
+        <section className="text-center  mt-[50px] h-[50vh]" name="about">
+          <p className="font-extrabold text-xl">About us</p>
+          <p className="text-slate-500">Agrisage is created by three tremendous people </p>
           <div>
             <div className="justify-center max-w-[auto]  gap-9 p-[10px]">
               <button
                 onClick={prevSlides}
-                className="mr-[10px] text-lg  font-extrabold text-slate-300"
+                className="mr-[10px] text-lg hover:text-slate-600  font-extrabold text-slate-300"
               >
                 <p>Back</p>
               </button>
               <button
                 onClick={nextSlides}
-                className="ml-[10px] text-lg font-extrabold text-slate-300"
+                className="ml-[10px] text-lg hover:text-slate-600 font-extrabold text-slate-300"
               >
                 <p>Next</p>
               </button>
@@ -261,46 +280,75 @@ const Home = () => {
                     <div className="flex flex-col text-center items-center">
                       <img
                         src={user.photo}
-                        className="max-w-[300px] roundedFig"
+                        className="max-w-[200px] roundedFig"
                       />
                       <p className="text-xl font-extrabold mt-[30px] text-center">
                         {user.name}
                       </p>
-                      <p className="max-w-[30rem] p-[10px]">{user.text}</p>
+                      <p className="max-w-[30rem] text-slate-500 p-[10px]">{user.text}</p>
                     </div>
                   </div>
                 )}
               </div>
             ))}
           </div>
-        </div>
+        </section>
 
-        <div className="bg-slate-200   footS  p-4 mt-[40px]" id='contact'>
-            <div className="flex justify-around TEXTh mt-4">
-                <div>
-                    <p>About us</p>
-                    <p>Shedrack - ML Engineer</p>
-                    <p>Ayomide - Backend developer</p>
-                    <p>Tomide - Frontend developer</p>
-                </div>
-
-                <div>
-                    <p>Contact us</p>
-                    <p>adeyemishedracktimi@gmail.com</p>
-                    <p>ayomide@gmail.com</p>
-                    <p>adeyanjutomide@gmail.com</p>
-                </div>
-
-                <div>
-                    <p>Connect with us</p>
-                    <p>adeyemishedracktimi@gmail.com</p>
-                    <p>ayomide@gmail.com</p>
-                    <p>adeyanjutomide@gmail.com</p>
-                </div>
-
+        {/*Footer Section*/}
+        <footer
+          className="bg-slate-200 mt-[20px]   footS  p-4 mt-[40px]"
+          name="contact"
+        >
+          <div className="flex justify-around TEXTh mt-4">
+            <div>
+              <p className="text-slate-900 font-extrabold">About us</p>
+              <p className="text-slate-600">Shedrack - ML Engineer</p>
+              <p className="text-slate-600">Ayomide - Backend developer</p>
+              <p className="text-slate-600">Tomide - Frontend developer</p>
             </div>
 
-        </div>
+            <div>
+              <p className="text-slate-900 font-extrabold">Contact us</p>
+              <p className="text-slate-600">
+                {" "}
+                <a href="mailto:adeyemishedracktimi@gmail.com">Mail Shadrack</a>
+              </p>
+              <p className="text-slate-600">
+                {" "}
+                <a href="mailto:adeyanjutomide@gmail.com"> Mail tomide</a>
+              </p>
+              <p className="text-slate-600">
+                {" "}
+                <a href="mailto:ayomide@gmail.com"> Mail taiwo</a>
+              </p>
+            </div>
+
+            <div>
+              <p className="text-slate-900 font-extrabold">Connect with us</p>
+              <p className="text-slate-600">
+                {" "}
+                <a href="https://www.linkedin.com/in/adeyanju-tomide-a630551b9/">
+                  {" "}
+                  Connect with Tomide
+                </a>
+              </p>
+              <p className="text-slate-600">
+                {" "}
+                <a href="https://www.linkedin.com/in/ayomide-taiwo-407686231/">
+                  {" "}
+                  Connect with Taiwo
+                </a>
+              </p>
+              <p className="text-slate-600">
+                {" "}
+                <a href="https://www.linkedin.com/in/shadrack-timi-adeyemi/">
+                  {" "}
+                  Connect with Shadrack
+                </a>
+              </p>
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );

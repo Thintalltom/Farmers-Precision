@@ -2,9 +2,12 @@
   .header {
     display: flex;
     flex-direction: row;
-    
+    position: fixed;
     padding: 10px;
-    justify-content: space-around;
+    justify-content: space-between;
+    width: 360px;
+   
+       z-index: 2;
   }
   .home1 .home2 {
     display: none;
@@ -26,12 +29,14 @@
     width: 300px !important;
   }
   .precision .precision2 {
-    color: black !important;
+    color: rgb(241, 241, 241) !important;
     text-align: center;
-    font-size: smaller;
+    font-size:larger !important;
+    font-weight: bolder !important;
+    
   }
   .precision .precision3 {
-    font-size: x-small;
+    font-size: small;
     width: 260px;
   }
   .features .features2 {
@@ -67,6 +72,8 @@
   }
   .gridSys1 .holdT {
     text-align: center;
+    font-size:larger !important;
+    font-weight: bolder !important;
   }
 
   .gridSys1 {
@@ -80,6 +87,7 @@
   }
   .footS {
     height: 60vh;
+    margin-top: 100px !important;
   }
 }
 .gridSys {
@@ -95,4 +103,11 @@
 }
 html {
     scroll-behavior: smooth;
+}
+.home2
+{
+  position: fixed;
+  display: flex;
+ 
+  width: 100vw;
 }
