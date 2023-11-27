@@ -48,10 +48,10 @@ const Home = () => {
         {/*Banner Section*/}
         <section name="home">
           <div className="flex  precision  flex-col h-[60vh]  justify-center items-center align-center">
-            <p className=" bg-yellow-500 mt-[40px] text-white precision2 sm:font-extrabold lg:text-5xl xl:text-5xl xxl:text-5xl sm:text-sm sm:text-center text-extrabold">
+            <p className="  mt-[40px] text-white precision2 sm:font-extrabold lg:text-5xl xl:text-5xl xxl:text-5xl sm:text-sm sm:text-center text-extrabold">
               Welcome to Agrisage – Where Precision Meets Agriculture! 🌾
             </p>
-            <p className="text-center precision3 bg-red-500 text-white text-extrathin   mt-4 w-[700px]">
+            <p className="text-center precision3  text-white text-extrathin   mt-4 w-[700px]">
               At AgriSage, we're redefining agriculture through the power of
               precision AI. Step into a realm where technology and nature
               seamlessly converge to optimize your farm's potential.
@@ -183,7 +183,7 @@ const Home = () => {
 
         {/*About Section*/}
 
-        <section className="text-center  mt-[50px] h-[50vh]" name="about">
+        <section className="text-center  mt-[50px] p-[30px] " name="about">
           <p className="font-extrabold text-xl">About us</p>
           <p className="text-slate-500">Agrisage is created by three tremendous people </p>
           <div>
@@ -213,7 +213,7 @@ const Home = () => {
                       <p className="text-xl font-extrabold mt-[30px] text-center">
                         {user.name}
                       </p>
-                      <p className="max-w-[30rem] text-slate-500 p-[10px]">{user.text}</p>
+                      <p className=" text-slate-500  p-[10px]">{user.text}</p>
                     </div>
                   </div>
                 )}

@@ -103,6 +103,15 @@
   gap: 30px;
   margin-top: 20px;
 }
+
+.gridSys2 {
+  display: flex;
+  flex-direction: row;
+
+  justify-content: center;
+  gap: 30px;
+  margin-top: 20px;
+}
 .roundedFig {
   clip-path: circle() !important;
 }
