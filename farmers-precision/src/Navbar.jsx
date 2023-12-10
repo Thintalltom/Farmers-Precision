@@ -1,96 +1,106 @@
 import React,{useState, useEffect} from 'react'
+import Logo from "./assets/logo.png";
 import { FiMenu, FiX } from "react-icons/fi";
-import { Link } from "react-scroll";
-import "./Home.css";
+import { Link as LinkRoll } from "react-scroll";
+import { Link } from "react-router-dom";
+import "./Navbar.css";
 const Navbar = () => {
-    const [open, setOpen] = useState(false);
+  const [open, setOpen] = useState(false);
 
-    const handleClick = () => {
-      setOpen(!open);
-    };
+  const handleClick = () => {
+    setOpen(!open);
+  };
 
-    const handleItem = () => {
-      setOpen(false)
-    }
+  const handleItem = () => {
+    setOpen(true);
+    console.log("clicked");
+  };
 
   
+   
+  
   return (
-    <div>
-         <div className="flex justify-around bg-green-700 text-white p-4 home2 ">
-          <p> Agrisage</p>
-          <div className="flex gap-9 text-white">
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-            <Link to="home" smooth={true} duration={500}>
-                Home
-              </Link>
-            </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="features" smooth={true} duration={500}>
-                Features
-              </Link>
-            </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="works" smooth={true} duration={500}>
-                How it works
-              </Link>
-            </p>
+    <div className=" home bg-[#1e1e1e]">
+      <div className="agrisageBox border-b-[0.5px] flex justify-around bg-[#1e1e1e] cursor-pointer fixed  w-[100vw]   p-[10px]">
+        <Link to="/">
+          <div className="flex   flex-row gap-[20px] items-center w-[200px]">
+            <img src={Logo} className="w-[40px]" />
+            <p className="text-slate-200 font-bold">Agrisage</p>
+          </div>
+        </Link>
 
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="about" smooth={true} duration={500}>
-                About us
-              </Link>
-            </p>
-            <p className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="contact" smooth={true} duration={500}>
-                Contact
-              </Link>
-            </p>
+        <div className="text-slate-200 flex justify-center items-center gap-[20px]">
+          <LinkRoll to="features" smooth={true} duration={500}>
+            Features
+          </LinkRoll>
+          <LinkRoll to="work" smooth={true} duration={500}>
+            How it works
+          </LinkRoll>
+          <LinkRoll to="about" smooth={true} duration={500}>
+            About us
+          </LinkRoll>
+          <LinkRoll to="contact" smooth={true} duration={500}>
+            Contact us
+          </LinkRoll>
+        </div>
+        <div className="flex justify-center items-center">
+        <Link to="/query">
+          <button className="border-[0.5px] border-white text-sm  p-[10px] items-center justify-center flex text-slate-200 h-[30px] rounded-[5px]">
+            Get Started
+          </button>
+        </Link>
+        </div>
+      </div>
+
+      {/*Navbar for small screen*/}
+      <div className="lg:hidden sm:block xxl:hidden 2xl:hidden bg-[#1e1e1e]">
+        <div className="bg-[#1e1e1e] items-center menu mt-[-10px]  flex justify-between  p-[20px] ">
+          <Link to="/">
+            <div className="flex   flex-row gap-[5px] items-center w-[200px]">
+              <img src={Logo} className="w-[40px]" />
+              <p className="text-slate-200 font-bold">Agrisage</p>
+            </div>
+          </Link>
+
+          <div onClick={handleClick}>
+            {open ? (
+              <FiMenu className="text-white text-2xl" />
+            ) : (
+              <FiX className="text-white text-2xl" />
+            )}
           </div>
         </div>
 
-        {/*Navbar for small screen*/}
-        <div className="bg-green-700 shadow-md">
-          <div className="header text-white bg-green-700  shadow-md lg:hidden">
-            <p> Agrisage</p>
+        <div
+          className={
+            !open
+              ? "text-slate-200 header2 bg-[#1e1e1e] align-center   justify-center items-center gap-[20px] h-[400px] flex flex-col gap-[20px]"
+              : "hidden"
+          }
+        >
+          <LinkRoll to="features" smooth={true} duration={500}>
+            <div onClick={handleItem}>Features</div>
+          </LinkRoll>
 
-            <div onClick={handleClick}>{open ? <FiMenu /> : <FiX />}</div>
-          </div>
-          <div
-            className={
-              !open
-                ? "header2 bg-green-700 shadow-sm lg:hidden"
-                : "header3 lg:hidden"
-            }
-          >
-            <p  onClick={() => setOpen(false)} className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-            <Link to="home" smooth={true} duration={500} >
-                Home
-              </Link>
-            </p>
-            <p  onClick={() => setOpen(false)} className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="features" smooth={true} duration={500}>
-                Features
-              </Link>
-            </p>
-            <p  onClick={handleItem} className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="works" smooth={true} duration={500}>
-                How it works
-              </Link>
-            </p>
-
-            <p  onClick={() => setOpen(false)} className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link to="about" smooth={true} duration={500}>
-                About us
-              </Link>
-            </p>
-            <p onClick={() => setOpen(false)}  className="hover:text-slate-400 cursor-pointer hover:border-b-2 hover:border-b-white">
-              <Link  to="contact" smooth={true} duration={500}>
-                Contact
-              </Link>
-            </p>
-          </div>
+          <LinkRoll to="work" smooth={true} duration={500}>
+            <div onClick={handleItem}>How it works</div>
+          </LinkRoll>
+          <LinkRoll to="about" smooth={true} duration={500}>
+            <div onClick={handleItem}>About us</div>
+          </LinkRoll>
+          <LinkRoll to="contact" smooth={true} duration={500}>
+            <div onClick={handleItem}>Contact us</div>
+          </LinkRoll>
+          <Link to="/query">
+            <button
+              onClick={handleItem}
+              className="border-2 border-white text-sm  p-[10px] text-slate-200 h-[40px] rounded-[5px]"
+            >
+              Get Started
+            </button>
+          </Link>
         </div>
-
+      </div>
     </div>
   )
 }
