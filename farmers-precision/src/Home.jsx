@@ -8,7 +8,7 @@ import Team from "./Team";
 const Home = () => {
   return (
    
-      <div  className='h-[63rem] bg-[#1E1E1E]'>
+      <div  className='h-screen bg-[#1E1E1E]'>
         {/*Banner Section*/}
        <Hero />
 

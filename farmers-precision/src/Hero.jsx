@@ -28,7 +28,7 @@ const Hero = () => {
             </button>
             </Link>
             <LinkRoll to='work'>
-            <button className="text-white bg-[#1E1E1E] btn2 border-[0.5px] p-[8px] rounded-[5px] w-[120px]">
+            <button className="text-white bg-[#1E1E1E] btn2 border-[0.5px] p-[8px] rounded-[5px] w-[150px]">
               How it works?
             </button>
             </LinkRoll>
